@@ -36,8 +36,10 @@ namespace LeilaoUseCases.Test.Auctions.GetCurrent
             var mock = new Mock<IAuctionRepository>();
             mock.Setup(i => i.GetCurrent()).Returns(auctionEntity);
             var useCase = new GetCurrentAuctionsUseCase(mock.Object);
+
             //Act
             var auction = useCase.Execute();
+
             //Assert
             auction.Should().NotBeNull();
             auction.Id.Should().Be(auctionEntity.Id);
