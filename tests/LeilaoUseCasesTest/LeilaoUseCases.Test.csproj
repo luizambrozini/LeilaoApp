@@ -27,6 +27,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Leilao.Applicarion\Leilao.Applicarion.csproj" />
+    <ProjectReference Include="..\..\src\Leilao.Comunications\Leilao.Comunications.csproj" />
   </ItemGroup>
 
   <ItemGroup>

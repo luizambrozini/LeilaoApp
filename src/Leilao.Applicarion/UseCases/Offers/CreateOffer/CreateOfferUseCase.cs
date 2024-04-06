@@ -10,10 +10,10 @@ namespace Leilao.Applicarion.UseCases.Offers.CreateOffer
 {
     public class CreateOfferUseCase
     {
-        private readonly LoggedUser _loggedUser;
+        private readonly ILoggedUser _loggedUser;
         private readonly IOfferRepository _offerRepository;
 
-        public CreateOfferUseCase(LoggedUser loggedUser, IOfferRepository offerRepository)
+        public CreateOfferUseCase(ILoggedUser loggedUser, IOfferRepository offerRepository)
         {
             _offerRepository = offerRepository;
             _loggedUser = loggedUser;
