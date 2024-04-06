@@ -32,7 +32,7 @@ namespace LeilaoUseCases.Test.Auctions.GetCurrent
                         Condition = f.PickRandom<Condition>(),
                         AuctionId = auction.Id
                     }
-                });
+                }).Generate();
             var mock = new Mock<IAuctionRepository>();
             mock.Setup(i => i.GetCurrent()).Returns(auctionEntity);
             var useCase = new GetCurrentAuctionsUseCase(mock.Object);
@@ -40,7 +40,8 @@ namespace LeilaoUseCases.Test.Auctions.GetCurrent
             var auction = useCase.Execute();
             //Assert
             auction.Should().NotBeNull();
-
+            auction.Id.Should().Be(auctionEntity.Id);
+            auction.Name.Should().Be(auctionEntity.Name);
         }
     }
 }
